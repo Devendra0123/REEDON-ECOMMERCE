@@ -44,7 +44,7 @@ const PrivacyPolicy = () => {
                             </ul>
 
                             <p>
-                                2. Usage Data: We may also collect information on how the Service is accessed and used. This Usage Data may include information such as your computer's Internet Protocol address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
+                                2. Usage Data: We may also collect information on how the Service is accessed and used. This Usage Data may include information such as your computer Internet Protocol address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
                             </p>
                         </div>
                         {/*....Use of Data..*/}
