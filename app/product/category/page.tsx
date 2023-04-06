@@ -20,7 +20,7 @@ const CategoryProducts = ({ searchParams: { category_id } }: Props) => {
  
 const fetchProducts = async () => {
   setLoading(true)
-   const query = `*[_type == "product" && ${category_id} in categories[]->slug.current]{
+   const query = `*[_type == "product" && '${category_id}' in categories[]->slug.current]{
     _id,
     name,
     image,
@@ -30,8 +30,12 @@ const fetchProducts = async () => {
     slug,
     customerReview
 }`
-  const info = await client.fetch(query, { cache: 'no-store' }).then((res)=> setProducts(res))
-  setLoading(false)
+  await client.fetch(query, { cache: 'no-store' }).then((res)=> {
+    console.log(res)
+    setProducts(res)
+    setLoading(false)
+  }
+   )
 }
 
   useEffect(() => {
