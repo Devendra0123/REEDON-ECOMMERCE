@@ -1,24 +1,24 @@
-
+'use client'
 import { client } from '@/utils/sanityClient'
 import Link from 'next/link'
 import React from 'react'
 
-
-const fetchCategories = async () => {
-  const query = `*[_type == "category"]{
-    _id,
-    categoryName,
-    image,
-    slug
-}`
-
-  const res = await client.fetch(query, { next: { revalidate: 60 } });
-  return res;
-}
-
 const Category = async() => {
 
-  const categories : any = await fetchCategories();
+  const [categories, setCategories] = useState<any>()
+    const fetchCategories = async () => {
+    const query = `*[_type == "category"]{
+      _id,
+      categoryName,
+      slug
+  }`
+  
+await client.fetch(query, { next: { revalidate: 60 } }).then(res => setCategories(res));
+ 
+  }
+    useEffect(()=>{
+    fetchCategories();
+    },[])
 
   return (
       <div className='hidden lg:block fixed top-[170px] left-[20px] flex flex-col gap-[10px] bg-slate-800 p-[20px]'>
