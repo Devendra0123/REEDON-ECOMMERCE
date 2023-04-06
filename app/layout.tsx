@@ -1,4 +1,11 @@
+'use client'
+
 import './globals.css'
+import { StateContext } from '../context/stateContext'
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import Cart from '@/components/Cart';
+import Overlay from '@/components/Overlay';
+import ReedonBanner from '@/components/ReedonBanner';
 
 export const metadata = {
   title: 'Create Next App',
@@ -10,9 +17,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body id='body' className='relative'>
+        <GoogleOAuthProvider clientId={`${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}`}>
+          <StateContext>
+            <ReedonBanner />
+            <Overlay />
+            <Cart />
+            {children}
+          </StateContext>
+        </GoogleOAuthProvider>
+      </body>
     </html>
   )
 }
