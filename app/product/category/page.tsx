@@ -30,15 +30,15 @@ const fetchProducts = async () => {
     slug,
     customerReview
 }`
-  const info = await client.fetch(query)
+  const info = await client.fetch(query).then((res)=> setProducts(res))
   setLoading(false)
-  setProducts(info)
 }
 
   useEffect(() => {
     fetchProducts()
   }, [category_id])
 
+  console.log(products)
   return (
     <div>
     <Navbar />
