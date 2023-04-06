@@ -1,7 +1,7 @@
 'use client'
 import { client } from '@/utils/sanityClient'
 import Link from 'next/link'
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 
 const Category = () => {
 
