@@ -30,7 +30,7 @@ const fetchProducts = async () => {
     slug,
     customerReview
 }`
-  const info = await client.fetch(query).then((res)=> setProducts(res))
+  const info = await client.fetch(query, { cache: 'no-store' }).then((res)=> setProducts(res))
   setLoading(false)
 }
 
