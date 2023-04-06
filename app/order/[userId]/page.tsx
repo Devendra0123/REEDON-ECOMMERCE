@@ -112,7 +112,7 @@ const Orders = ({ params: { userId } }: Props) => {
         ) : (loading=== false && !orderData) ? (
           <div className='flex flex-col items-center gap-[20px] mt-[50px]'>
             <p className='text-lg font-poppins'>
-              You have not placed any Order
+              No order to show
             </p>
             <Link href='/' className='bg-yellow-400 px-[15px] py-[7px] font-bold text-lg'>
               Shop Now
