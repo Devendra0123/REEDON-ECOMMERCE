@@ -16,8 +16,9 @@ const CategoryProducts = () => {
   const [loading, setLoading] = useState<boolean>(true)
   const [products, setProducts] = useState<any>()
  
-const fetchProducts = async (category_id : string) => {
-  setLoading(true)
+const fetchProducts = async (category_id : any) => {
+  if(category_id){
+     setLoading(true)
    const query = `*[_type == "product" && '${category_id}' in categories[]->slug.current]{
     _id,
     name,
@@ -34,6 +35,7 @@ const fetchProducts = async (category_id : string) => {
     setLoading(false)
   }
    )
+  }
 }
 
   useEffect(() => {
