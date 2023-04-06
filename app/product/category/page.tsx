@@ -17,7 +17,10 @@ const CategoryProducts = ({ searchParams: { category_id } }: Props) => {
 
   const [loading, setLoading] = useState<boolean>(true)
   const [products, setProducts] = useState<any>()
-  const query = `*[_type == "product" && '${category_id}' in categories[]->slug.current]{
+ 
+const fetchProducts = async () => {
+  setLoading(true)
+   const query = `*[_type == "product" && '${category_id}' in categories[]->slug.current]{
     _id,
     name,
     image,
@@ -27,9 +30,6 @@ const CategoryProducts = ({ searchParams: { category_id } }: Props) => {
     slug,
     customerReview
 }`
-
-const fetchProducts = async () => {
-  setLoading(true)
   const info = await client.fetch(query)
   setLoading(false)
   setProducts(info)
@@ -53,7 +53,7 @@ const fetchProducts = async () => {
           ) : (
             <div>
               {
-                products ? (
+               (loading === false && products) ? (
                   <div className='lg:w-4/5 lg:relative lg:left-[250px] lg:top-[20px] flex flex-col lg:flex-row items-center lg:items-start lg:flex-wrap gap-[25px] mt-[10px] p-[10px]'>
                     {
                       products.map((item: any, index: number) => (
