@@ -50,10 +50,7 @@ const fetchProducts = async () => {
             <div className='mt-[30px] h-[20rem] flex items-center justify-center'>
               <Loader />
             </div>
-          ) : (
-            <div>
-              {
-               (loading === false && products) ? (
+          ) : (loading === false && products) ? (
                   <div className='lg:w-4/5 lg:relative lg:left-[250px] lg:top-[20px] flex flex-col lg:flex-row items-center lg:items-start lg:flex-wrap gap-[25px] mt-[10px] p-[10px]'>
                     {
                       products.map((item: any, index: number) => (
@@ -71,8 +68,6 @@ const fetchProducts = async () => {
                     </Link>
                   </div>
                 )
-              }
-            </div>
           )
         }
     </div>
