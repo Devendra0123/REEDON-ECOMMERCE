@@ -181,7 +181,7 @@ const ProductDetails = ({ params: { productId } }: Props) => {
               <div className='flex items-center gap-[5px] overflow-x-scroller scrollbar-hide mt-[10px]'>
                 {
                   product.image.map((item: any, index: number) => (
-                    <div onClick={() => setMainImage(item)} className='relative w-[5rem] h-[5rem] bg-slate-400 p-[3px] relative flex items-center justify-center rounded-xl'>
+                    <div key={index}  onClick={() => setMainImage(item)} className='relative w-[5rem] h-[5rem] bg-slate-400 p-[3px] relative flex items-center justify-center rounded-xl'>
                       <Image src={urlFor(item).url()} key={index} fill alt='product_image' className='object-contain rounded-lg' />
                     </div>
                   ))
