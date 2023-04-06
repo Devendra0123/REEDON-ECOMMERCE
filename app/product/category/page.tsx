@@ -7,14 +7,12 @@ import { client } from '@/utils/sanityClient'
 import Footer from '@/components/Footer'
 import Loader from '@/components/Loader'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation';
 
-interface Props {
-  searchParams: {
-    category_id: string
-  }
-}
-const CategoryProducts = ({ searchParams: { category_id } }: Props) => {
+const CategoryProducts = () => {
 
+  const searchParams = useSearchParams();
+  const category_id = searchParams.get('category_id');
   const [loading, setLoading] = useState<boolean>(true)
   const [products, setProducts] = useState<any>()
  
