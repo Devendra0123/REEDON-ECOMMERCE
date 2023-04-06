@@ -18,7 +18,7 @@ const CategoryProducts = ({ searchParams: { category_id } }: Props) => {
   const [loading, setLoading] = useState<boolean>(true)
   const [products, setProducts] = useState<any>()
  
-const fetchProducts = async () => {
+const fetchProducts = async (category_id) => {
   setLoading(true)
    const query = `*[_type == "product" && '${category_id}' in categories[]->slug.current]{
     _id,
@@ -39,10 +39,10 @@ const fetchProducts = async () => {
 }
 
   useEffect(() => {
-    fetchProducts()
+    fetchProducts(category_id)
   }, [category_id])
 
-  console.log(products)
+  console.log(category_id)
   return (
     <div>
     <Navbar />
