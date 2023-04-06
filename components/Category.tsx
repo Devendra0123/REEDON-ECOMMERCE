@@ -22,7 +22,7 @@ await client.fetch(query, { next: { revalidate: 60 } }).then(res => setCategorie
 
   return (
       <div className='hidden lg:block fixed top-[170px] left-[20px] flex flex-col gap-[10px] bg-slate-800 p-[20px]'>
-        {categories.map((item : any, index : number) => (
+        {categories && categories.map((item : any, index : number) => (
           <Link href={`/product/category?category_id=${item.slug.current}`} key={index}>
             <p className='p-[5px] font-poppins font-medium text-white text-lg'>
                {item.categoryName}
