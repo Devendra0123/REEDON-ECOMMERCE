@@ -1,9 +1,12 @@
+'
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { client, urlFor } from '@/utils/sanityClient'
 
-const fetchCategories = async () => {
+const CategoryCard = () => {
+
+    const fetchCategories = async () => {
     const query = `*[_type == "category"]{
       _id,
       categoryName,
@@ -14,10 +17,7 @@ const fetchCategories = async () => {
     const response = await client.fetch(query, { next: { revalidate: 60 } }).then(res => res);
     return response;
   }
-
-const CategoryCard = async() => {
-
-    const categories : any = await fetchCategories();
+    const categories : any = fetchCategories();
 
   return (
     <div className='w-full bg-slate-500 p-[20px] pt-[40px] flex justify-center items-center flex-wrap gap-[30px] lg:gap-[50px] mt-[0px]'>
