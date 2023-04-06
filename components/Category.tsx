@@ -3,7 +3,7 @@ import { client } from '@/utils/sanityClient'
 import Link from 'next/link'
 import React from 'react'
 
-const Category = async() => {
+const Category = () => {
 
   const [categories, setCategories] = useState<any>()
     const fetchCategories = async () => {
