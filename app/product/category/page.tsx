@@ -68,7 +68,6 @@ const fetchProducts = async () => {
                     </Link>
                   </div>
                 )
-          )
         }
     </div>
 
