@@ -6,6 +6,7 @@ import ProductCard from '@/components/ProductCard'
 import { client } from '@/utils/sanityClient'
 import Footer from '@/components/Footer'
 import Loader from '@/components/Loader'
+import Link from 'next/link'
 
 interface Props {
   searchParams: {
@@ -15,7 +16,7 @@ interface Props {
 const CategoryProducts = ({ searchParams: { category_id } }: Props) => {
 
   const [loading, setLoading] = useState<boolean>(true)
-
+  const [products, setProducts] = useState<any>()
   const query = `*[_type == "product" && '${category_id}' in categories[]->slug.current]{
     _id,
     name,
@@ -33,7 +34,6 @@ const fetchProducts = async () => {
   setLoading(false)
   setProducts(info)
 }
-  const [products, setProducts] = useState<any>()
 
   useEffect(() => {
     fetchProducts()
@@ -53,7 +53,7 @@ const fetchProducts = async () => {
           ) : (
             <div>
               {
-                products?.length > 0 ? (
+                products ? (
                   <div className='lg:w-4/5 lg:relative lg:left-[250px] lg:top-[20px] flex flex-col lg:flex-row items-center lg:items-start lg:flex-wrap gap-[25px] mt-[10px] p-[10px]'>
                     {
                       products.map((item: any, index: number) => (
@@ -66,9 +66,9 @@ const fetchProducts = async () => {
                     <p className='text-center pt-[30px] font-bold'>
                       No Products found
                     </p>
-                    <button className='bg-yellow-400 px-[20px] py-[8px] font-medium font-pacifico'>
+                    <Link href='/' className='bg-yellow-400 px-[20px] py-[8px] font-medium font-pacifico'>
                       Shop now
-                    </button>
+                    </Link>
                   </div>
                 )
               }
