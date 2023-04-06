@@ -18,7 +18,7 @@ const Orders = ({ params: { userId } }: Props) => {
   const [orderData, setOrderData] = useState<any>()
   const [loading, setLoading] = useState<boolean>(true)
 
-  const query = `*[_type == "order" && shippingDetails.userId == '${userId}']{
+  const query = `*[_type == "order" && shippingDetails.userId == "${userId}"]{
           _id,
           orderId,
           _createdAt,
@@ -53,12 +53,12 @@ const Orders = ({ params: { userId } }: Props) => {
   return (
     <div>
       <Navbar />
-      <p className='font-bold text-2xl p-[15px] pt-[30px] text-center underline underline-offset-8 decoration-yellow-400'>
+      <p className="font-bold text-2xl p-[15px] pt-[30px] text-center underline underline-offset-8 decoration-yellow-400">
         Your Orders
       </p>
       {
        (loading===false && orderData?.length > 0) ? (
-          <div className='flex flex-col items-center gap-[20px] p-[15px]'>
+          <div className="flex flex-col items-center gap-[20px] p-[15px]">
 
             {
               orderData.map((item: any, index: number) => (
@@ -109,11 +109,9 @@ const Orders = ({ params: { userId } }: Props) => {
             }
 
           </div>
-        ) : (loading=== false && !orderData) ? (
+        ) : (loading === false && !orderData) ? (
           <div className='flex flex-col items-center gap-[20px] mt-[50px]'>
-            <p className='text-lg font-poppins'>
-              No order to show
-            </p>
+            <p className="text-lg font-poppins">No order to show</p>
             <Link href='/' className='bg-yellow-400 px-[15px] py-[7px] font-bold text-lg'>
               Shop Now
             </Link>
