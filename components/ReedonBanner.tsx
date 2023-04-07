@@ -20,11 +20,11 @@ const ReedonBanner = () => {
       zIndex: '90'
     }} className={color}>
       <div className='p-[10px] flex items-center justify-center gap-[20px]'>
-        <p className='font-poppins text-lg font-bold'>
+        <p className='font-poppins text-sm mdtext-lg font-bold'>
           Buy this website
         </p>
-        <div className='flex items-center gap-[10px] text-lg font-pacifico'>
-          <p className='font-pacifico text-lg font-bold tracking-wider text-center'>
+        <div className='flex items-center gap-[5px] text-sm md:text-lg font-pacifico'>
+          <p className='font-pacifico text-sm md:text-lg font-bold tracking-wider text-center'>
             Reedon Web
           </p>
           <p>
