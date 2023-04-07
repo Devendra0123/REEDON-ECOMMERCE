@@ -5,7 +5,7 @@ import React from 'react'
 
 const ShippingDetail = () => {
   return (
-    <div>
+    <div className='max-w-screen'>
         <Navbar />
         <ShippingDetails />
         <Footer />
