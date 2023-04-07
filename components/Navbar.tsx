@@ -54,7 +54,7 @@ const Navbar = () => {
   /*........ Close Menu Bar on clicking display screen ......*/
   const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const target = event.target as HTMLElement;
-    if (!target.closest(".menubar")) {
+    if (!target.closest("menubar")) {
       setShowOverlay(false);
       setmenuDisplay(false);
     }
@@ -173,7 +173,13 @@ const Navbar = () => {
       {/*........TOGGLE MENU for mobile device.........*/}
       {
         menuDisplay && (
-          <div ref={menuRef} className='menubar'>
+          <div ref={menuRef} id='menubar' style={{
+              width: '100%',
+        position: 'fixed',
+        top: `0px`,
+        right: '0px',
+        zIndex: 99,
+      }}>
             <div className= 'w-full h-screen flex flex-col gap-[20px] bg-slate-800 p-[20px] pt-[50px]'>
               <Link href='/' className='flex justify-between items-center text-white border-b font-bold text-lg'>
                 <p>Shoppy Home</p>
