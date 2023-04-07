@@ -6,14 +6,18 @@ import ProductCard from '@/components/ProductCard'
 import { client } from '@/utils/sanityClient'
 import Footer from '@/components/Footer'
 import Loader from '@/components/Loader'
+import { useSearchParams } from 'next/navigation';
 
 interface Props {
   searchParams: {
     search_query: string
   }
 }
-const SearchProduct = ({ searchParams: { search_query } }: Props) => {
+const SearchProduct = () => {
 
+  const searchParams = useSearchParams();
+  const search_query = searchParams.get('search_query');
+  
   const [loading, setLoading] = useState<boolean>(true)
 
   const query = `*[_type == "product" && (name match "${search_query}**" || productDescription match "${search_query}**" || categories[]->categoryName match "${search_query}**")]{
