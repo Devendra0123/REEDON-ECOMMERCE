@@ -25,7 +25,7 @@ const Footer = () => {
 
     return (
         <div className='bg-slate-700 mt-[70px] text-slate-200'>
-            <div className='flex items-center justify-center gap-[20px]'>
+            <div className='w-full flex items-center justify-center gap-[20px] p-[10px]'>
                 {/*    Logo   */}
                 <Link href='/' className='flex items-center w-max'>
                     <Image src='/logo.png' width={80} height={50} alt='logo' />
