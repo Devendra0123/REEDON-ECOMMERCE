@@ -93,10 +93,10 @@ const Cart = () => {
       {/*....Cart Items......*/}
       {
         cartItems?.length > 0 ? (
-          <div className='h-3/4 overflow-y-scroll flex flex-col items-center gap-[10px] py-[20px] scrollbar-hide'>
+          <div className='h-3/4 w-full overflow-y-scroll flex flex-col items-center gap-[10px] py-[20px] scrollbar-hide'>
             {
               cartItems.map((item: any, index: number) => (
-                <div key={index} className='flex items-center gap-[10px] bg-white p-[10px] rounded-lg shadow-xl'>
+                <div key={index} className='w-[95%] flex items-center gap-[10px] bg-white p-[10px] rounded-lg shadow-xl'>
                   <div className='relative w-[9rem] h-[5rem]'>
                   <Image src={urlFor(item.image[0]).url()} fill className='object-contain rounded-xl' alt='productImage' />
                   </div>
