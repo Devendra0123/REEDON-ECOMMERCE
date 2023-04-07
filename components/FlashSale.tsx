@@ -59,9 +59,9 @@ const FlashSale = () => {
     return (
         <div className='bg-slate-300'>
             {/*......Flash Sale Heading ...........*/}
-            <div className='flex items-center justify-between lg:justify-evenly p-[10px] pt-[30px]'>
-                <p className='font-pacifico text-center text-violet-500 text-2xl font-bold'>
-                    FLASH SALE
+            <div className='flex items-center justify-center lg:justify-center p-[10px] pt-[30px]'>
+                <p className='font-pacifico text-center text-yellow-500 text-2xl font-bold'>
+                    Flash Sale
                 </p>
                 {/*
                     (flashSaleStartDate && flashSaleEndDate) && (
