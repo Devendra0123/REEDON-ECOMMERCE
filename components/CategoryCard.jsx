@@ -23,7 +23,7 @@ export default function CategoryCard(){
    fetchCategories()
 
   return (
-    <div className='w-full bg-slate-500 py-[20px] px-[5px] md:p-[20px] pt-[40px] flex justify-center items-center flex-wrap gap-[10px] md:gap-[30px] lg:gap-[50px] mt-[0px]'>
+    <div className='w-full bg-white py-[20px] px-[5px] md:p-[20px] pt-[40px] flex justify-center items-center flex-wrap gap-[10px] md:gap-[30px] lg:gap-[50px] mt-[0px]'>
 {
    categories && categories.map((item,index)=>(
         <Link href={`/product/category?category_id=${item.slug.current}`} key={index} className='z-10 relative'>
