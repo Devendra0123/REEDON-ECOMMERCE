@@ -300,7 +300,7 @@ const Navbar = () => {
                       Customer Suppport
                     </Link>
 
-                    <Link href='/faq' className='font-bold underline underline-offset-8 decoration-yellow-400'>
+                    <Link href='/frequently-asked-questions' className='font-bold underline underline-offset-8 decoration-yellow-400'>
                       FAQ
                     </Link>
                   </div>
