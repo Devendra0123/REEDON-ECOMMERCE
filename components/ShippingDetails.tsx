@@ -94,8 +94,8 @@ const ShippingDetails = () => {
     }
 
     return (
-        <div className='flex flex-col items-center mb-[30px]'>
-            <div className='w-full md:w-[30rem] flex flex-col items-center shadow-lg rounded'>
+        <div className='max-w-screen overflow-x-hidden flex flex-col items-center mb-[30px]'>
+            <div className='w-full md:w-[30rem] flex flex-col items-center md:shadow-lg'>
                 <div onClick={() => setItemsDisplay(!itemsDisplay)} className='w-full flex flex-col'>
                     <div className='bg-yellow-400 flex justify-between p-[10px] text-black mt-[20px] cursor-pointer'>
                         <p className='font-bold font-poppins'>
@@ -222,7 +222,7 @@ const ShippingDetails = () => {
                     }
 
 
-                    <div className='w-[95%] bg-yellow-400 rounded-t-lg p-[10px]'>
+                    <div className='w-[100%] bg-yellow-400 rounded-t-lg p-[10px]'>
                         <p className='font-[poppins] p-[10px]'>
                             Check your details carefully.
                         </p>
