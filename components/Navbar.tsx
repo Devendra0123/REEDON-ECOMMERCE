@@ -174,7 +174,7 @@ const Navbar = () => {
       {
         menuDisplay && (
           <div ref={menuRef} className='menubar'>
-            <div className={`${menuDisplay ? 'transform transition-transform ease-in duration-300' : 'transform transition-transform ease-out duration-300 translate-x-full'} w-full h-screen flex flex-col gap-[20px] bg-slate-800 p-[20px] pt-[50px]`}>
+            <div className= 'w-full h-screen flex flex-col gap-[20px] bg-slate-800 p-[20px] pt-[50px]'>
               <Link href='/' className='flex justify-between items-center text-white border-b font-bold text-lg'>
                 <p>Shoppy Home</p>
                 <BiHomeSmile />
