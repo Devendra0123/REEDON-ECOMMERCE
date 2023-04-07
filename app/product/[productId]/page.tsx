@@ -64,11 +64,11 @@ const ProductDetails = ({ params: { productId } }: Props) => {
   const [reviewDialog, setReviewDialog] = useState<boolean>(false);
   const [quantity, setQuantity] = useState<number>(1);
 
-  fetchProductDetails();
-
+ useEffect(() => {
+     fetchProductDetails();
+  }, [])
 
   useEffect(() => {
-
     if (product) {
       setMainImage(product.image[0])
     }
