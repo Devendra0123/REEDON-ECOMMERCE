@@ -72,7 +72,7 @@ const PaymentSection = () => {
         const requestBody = {
             "return_url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/checkout/payment/payment-success/khalti-payment-success`,
             "website_url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}`,
-            "amount": amountPaisa,
+            "amount": 100,
             "purchase_order_id": orderId,
             "purchase_order_name": cartProducts[0].name,
             "customer_info": {
@@ -94,11 +94,10 @@ const PaymentSection = () => {
         axios
             .post("https://a.khalti.com/api/v2/epayment/initiate/", requestBody, {
                 headers: {
-                    "Authorization": 'Key 1a2949d0117c49d8ba404af722f07bdd'
+                    "Authorization": `Key ${process.env.NEXT_PUBLIC_KHALTI_LIVE_KEY}`
                 }
             })
             .then(response => {
-                console.log(response)
                 window.location.href = response.data.payment_url;
             })
             .catch(error => {
@@ -115,11 +114,11 @@ const PaymentSection = () => {
 
         const path = "https://uat.esewa.com.np/epay/main";
         const params = {
-            amt: amountPaisa,
+            amt: 100,
             psc: 0,
             pdc: deliveryAmount,
             txAmt: 0,
-            tAmt: amountPaisa,
+            tAmt: 100,
             pid: orderId,
             scd: `${process.env.NEXT_PUBLIC_ESEWA_SCD_CODE}`,
             su: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/checkout/payment/payment-success/esewa-payment-success`,
