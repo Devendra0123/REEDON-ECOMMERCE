@@ -13,11 +13,11 @@ import { client, urlFor } from '@/utils/sanityClient'
   }`
   
    const response = await client.fetch(query, { next: { revalidate: 60 } }).then(res => res);
- return response;
+   return response;
   }
-export default async function CategoryCard(){
+export default function CategoryCard(){
 
-   const categories = await fetchCategories()
+   const categories = fetchCategories()
 
   return (
     <div className='w-full bg-slate-500 p-[20px] pt-[40px] flex justify-center items-center flex-wrap gap-[30px] lg:gap-[50px] mt-[0px]'>
