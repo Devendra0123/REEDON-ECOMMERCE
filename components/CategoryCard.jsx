@@ -23,14 +23,14 @@ export default function CategoryCard(){
    fetchCategories()
 
   return (
-    <div className='w-full bg-slate-500 p-[20px] pt-[40px] flex justify-center items-center flex-wrap gap-[30px] lg:gap-[50px] mt-[0px]'>
+    <div className='w-full bg-slate-500 py-[20px] px-[5px] md:p-[20px] pt-[40px] flex justify-center items-center flex-wrap gap-[10px] md:gap-[30px] lg:gap-[50px] mt-[0px]'>
 {
    categories && categories.map((item,index)=>(
         <Link href={`/product/category?category_id=${item.slug.current}`} key={index} className='z-10 relative'>
             <p className='font-medium text-lg bg-gradient-to-r from-yellow-500 to-transparent p-[5px] rounded-t-lg'>
                 {item.categoryName}
             </p>
-            <div className='relative w-[12rem] h-[14rem] lg:w-[17rem] lg:h-[20rem]'>
+            <div className='relative w-[10rem] h-[14rem] lg:w-[17rem] lg:h-[20rem]'>
             <Image src={urlFor(item.image).url()} fill className='object-cover rounded-b-xl' alt='category' />
             </div>
             <button className='absolute bottom-[25px] right-[0px] bg-slate-800 text-white p-[5px]'>
