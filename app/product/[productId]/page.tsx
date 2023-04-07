@@ -60,10 +60,9 @@ const ProductDetails = ({ params: { productId } }: Props) => {
 
   const [user, setUser] = useState<any>(null)
   const [product, setProduct] = useState<Product>();
-  const [mainImage, setMainImage] = useState<string>();
+  const [mainImage, setMainImage] = useState<any>();
   const [reviewDialog, setReviewDialog] = useState<boolean>(false);
   const [quantity, setQuantity] = useState<number>(1);
-
 
   fetchProductDetails();
 
