@@ -1,12 +1,9 @@
-'use client'
+
 import React,{useState, useEffect} from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { client, urlFor } from '@/utils/sanityClient'
 
-const CategoryCard = () => {
-
-    const [categories, setCategories] = useState<any>()
     const fetchCategories = async () => {
     const query = `*[_type == "category"]{
       _id,
@@ -15,12 +12,12 @@ const CategoryCard = () => {
       slug
   }`
   
-await client.fetch(query, { next: { revalidate: 60 } }).then(res => setCategories(res));
- 
+   const response = await client.fetch(query, { next: { revalidate: 60 } }).then(res => res);
+ return response;
   }
-    useEffect(()=>{
-    fetchCategories();
-    },[])
+export default async function CategoryCard(){
+
+   const categories = await fetchCategories()
 
   return (
     <div className='w-full bg-slate-500 p-[20px] pt-[40px] flex justify-center items-center flex-wrap gap-[30px] lg:gap-[50px] mt-[0px]'>
