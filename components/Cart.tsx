@@ -93,7 +93,7 @@ const Cart = () => {
       {/*....Cart Items......*/}
       {
         cartItems?.length > 0 ? (
-          <div className='h-3/4 w-full overflow-y-scroll flex flex-col items-center gap-[10px] py-[20px] scrollbar-hide'>
+          <div className='h-3/4 w-full overflow-y-scroll flex flex-col items-center gap-[10px] py-[20px] pb-[50px] scrollbar-hide'>
             {
               cartItems.map((item: any, index: number) => (
                 <div key={index} className='w-[95%] flex items-center gap-[10px] bg-white p-[10px] rounded-lg shadow-xl'>
@@ -145,7 +145,7 @@ const Cart = () => {
                 Delivery Charge : Rs.{deliveryCharge}
               </p>
               <p className='font-pacifico font-medium'>
-                Total Price : Rs.{totalPrice} + Rs.{deliveryCharge} = Rs.{totalPrice + deliveryCharge}
+                Total : Rs.{totalPrice} + Rs.{deliveryCharge} = Rs.{totalPrice + deliveryCharge}
               </p>
               <Link href='/checkout/shipping-details' onClick={()=> setShowCart(false)} className='bg-violet-800 px-[15px] py-[8px] font-poppins text-white text-center'>
                 Place Order
