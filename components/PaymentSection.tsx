@@ -72,9 +72,9 @@ const PaymentSection = () => {
         const requestBody = {
             "return_url": 'https://reedon-shop.vercel.app/checkout/payment/payment-success/khalti-payment-success',
             "website_url": 'https://reedon-shop.vercel.app',
-            "amount": 100,
-            "purchase_order_id": orderId,
-            "purchase_order_name": cartProducts[0].name,
+            "amount": 1300,
+            "purchase_order_id": "test12",
+            "purchase_order_name": "test",
         };
 
         axios
