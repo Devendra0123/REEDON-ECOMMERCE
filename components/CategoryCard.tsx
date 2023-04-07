@@ -39,5 +39,3 @@ export default async function CategoryCard(){
     </div>
   )
 }
-
-export default CategoryCard
