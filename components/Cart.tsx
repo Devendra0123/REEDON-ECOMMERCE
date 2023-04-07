@@ -157,9 +157,9 @@ const Cart = () => {
             <p className='text-white'>
               No items in cart
             </p>
-            <button className='bg-yellow-500 px-[15px] py-[7px] font-medium'>
+            <Link href='/' className='bg-yellow-500 px-[15px] py-[7px] font-medium'>
               Shop Now
-            </button>
+            </Link>
           </div>
         )
       }
