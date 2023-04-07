@@ -234,8 +234,8 @@ const ShippingDetails = () => {
                                         w a i t . . .
                                     </p>
                                 ) : (
-                                    <div onClick={handleShipping} className='cursor-pointer'>
-                                        <p>C o n t i n u e</p>
+                                    <div className='cursor-pointer'>
+                                        <p onClick={handleShipping}>C o n t i n u e</p>
                                     </div>
                                 )
                             }
