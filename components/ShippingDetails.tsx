@@ -222,7 +222,7 @@ const ShippingDetails = () => {
                     }
 
 
-                    <div className='w-[80%] bg-yellow-400 rounded-t-lg p-[10px]'>
+                    <div className='w-[95%] bg-yellow-400 rounded-t-lg p-[10px]'>
                         <p className='font-[poppins] p-[10px]'>
                             Check your details carefully.
                         </p>
