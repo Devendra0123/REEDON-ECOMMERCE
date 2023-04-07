@@ -94,7 +94,7 @@ const PaymentSection = () => {
         axios
             .post("https://a.khalti.com/api/v2/epayment/initiate/", requestBody, {
                 headers: {
-                    "Authorization": `Key 1a2949d0117c49d8ba404af722f07bdd`
+                    "Authorization": 'Key 1a2949d0117c49d8ba404af722f07bdd'
                 }
             })
             .then(response => {
