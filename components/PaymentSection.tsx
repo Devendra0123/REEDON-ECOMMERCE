@@ -70,8 +70,8 @@ const PaymentSection = () => {
         const orderId = generateOrderId();
 
         const requestBody = {
-            "return_url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/checkout/payment/payment-success/khalti-payment-success`,
-            "website_url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}`,
+            "return_url": 'https://reedon-shop.vercel.app/checkout/payment/payment-success/khalti-payment-success',
+            "website_url": 'https://reedon-shop.vercel.app',
             "amount": 100,
             "purchase_order_id": orderId,
             "purchase_order_name": cartProducts[0].name,
@@ -94,7 +94,7 @@ const PaymentSection = () => {
         axios
             .post("https://a.khalti.com/api/v2/epayment/initiate/", requestBody, {
                 headers: {
-                    "Authorization": `Key ${process.env.NEXT_PUBLIC_KHALTI_LIVE_KEY}`
+                    "Authorization": 'Key 1a2949d0117c49d8ba404af722f07bdd'
                 }
             })
             .then(response => {
@@ -116,13 +116,13 @@ const PaymentSection = () => {
         const params = {
             amt: 100,
             psc: 0,
-            pdc: deliveryAmount,
+            pdc: 0,
             txAmt: 0,
             tAmt: 100,
             pid: orderId,
-            scd: `${process.env.NEXT_PUBLIC_ESEWA_SCD_CODE}`,
-            su: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/checkout/payment/payment-success/esewa-payment-success`,
-            fu: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/checkout/payment/payment-failure/esewa-payment-failure`
+            scd: 'EPAYTEST',
+            su: 'https://reedon-shop.vercel.app/checkout/payment/payment-success/esewa-payment-success',
+            fu: 'https://reedon-shop.vercel.app/checkout/payment/payment-failure/esewa-payment-failure'
         };
         submitForm(path, params);
     };
