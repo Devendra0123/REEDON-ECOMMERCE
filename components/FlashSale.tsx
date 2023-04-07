@@ -60,7 +60,7 @@ const FlashSale = () => {
         <div className='bg-slate-300'>
             {/*......Flash Sale Heading ...........*/}
             <div className='flex items-center justify-center lg:justify-center p-[10px] pt-[30px]'>
-                <p className='font-pacifico text-center text-yellow-500 text-2xl font-bold'>
+                <p className='bg-yellow-400 p-[10px] font-pacifico text-center text-black text-2xl font-bold tracking-wider'>
                     Flash Sale
                 </p>
                 {/*
