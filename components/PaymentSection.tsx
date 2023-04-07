@@ -75,20 +75,6 @@ const PaymentSection = () => {
             "amount": 100,
             "purchase_order_id": orderId,
             "purchase_order_name": cartProducts[0].name,
-            "customer_info": {
-                "name": shippingInfo.customerName,
-                "email": shippingInfo.email,
-                "phone": shippingInfo.contactNumber
-            },
-            "product_details": cartProducts.map((item: any) => (
-                {
-                    "identity": item._id,
-                    "name": item.name,
-                    "total_price": item.quantity * item.currentPrice * 100,
-                    "quantity": item.quantity,
-                    "unit_price": item.currentPrice * 100
-                }
-            ))
         };
 
         axios
