@@ -7,12 +7,8 @@ import { client } from '@/utils/sanityClient'
 import Footer from '@/components/Footer'
 import Loader from '@/components/Loader'
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 
-interface Props {
-  searchParams: {
-    search_query: string
-  }
-}
 const SearchProduct = () => {
 
   const searchParams = useSearchParams();
@@ -22,7 +18,8 @@ const SearchProduct = () => {
   const [searchQuery, setSearchQuery] = useState<any>()
   
   const fetchProducts = async () => {
-    setLoading(true)
+    if(searchQuery){
+        setLoading(true)
       const query = `*[_type == "product" && (name match "${searchQuery}**" || productDescription match "${searchQuery}**" || categories[]->categoryName match "${searchQuery}**")]{
     _id,
     name,
@@ -33,8 +30,9 @@ const SearchProduct = () => {
     slug,
     customerReview
 }`
-  await client.fetch(query).then((res)=> setProducts(res))
+  await client.fetch(query).then((res=> setProducts(res))
     setLoading(false)
+    }
   }
 
   useEffect(() => {
