@@ -142,10 +142,10 @@ const Navbar = () => {
                   </p>
                 )
               }
-              <BsCart2 className='text-white font-bold text-xl' />
+              <BsCart2 className='text-white font-bold text-2xl' />
             </div>
             <div onClick={toggleMenu}>
-              <RiMenuFill className='text-white font-bold text-xl cursor-pointer' />
+              <RiMenuFill className='text-white font-bold text-2xl cursor-pointer' />
             </div>
           </div>
         </div>
