@@ -74,11 +74,11 @@ const HeroBanner = () => {
                 alt='banner' />
             </div>
 
-            <div onClick={() => router.push(`${banner[currentImageIndex].bannerLink}`)} className='cursor-pointer max-w-full lg:max-w-lg absolute top-[20px] lg:top-[50px] left-[0px] p-[20px] py-[10px] z-20 bg-gradient-to-l from-transparent to-yellow-500'>
+            <div onClick={() => router.push(`${banner[currentImageIndex].bannerLink}`)} className='cursor-pointer w-[75%] lg:max-w-lg absolute top-[20px] lg:top-[50px] left-[0px] p-[20px] py-[10px] z-20 bg-gradient-to-l from-transparent to-yellow-500'>
               <p className='font-bold text-lg md:text-3xl'>
                 {banner[currentImageIndex].bannerTitle}
               </p>
-              <p>
+              <p className="font-poppins">
                 {banner[currentImageIndex].bannerDescription}
               </p>
               <p className='bannerOffer'>
