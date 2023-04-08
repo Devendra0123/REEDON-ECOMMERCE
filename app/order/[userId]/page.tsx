@@ -48,7 +48,7 @@ const Orders = ({ params: { userId } }: Props) => {
 
   useEffect(() => {
     if(userId === 'user'){
-    setOrderData(null)
+    setOrderData([])
       setLoading(false)
     }else{
     fetchOrderDetails()
@@ -114,7 +114,7 @@ const Orders = ({ params: { userId } }: Props) => {
             }
 
           </div>
-        ) : (loading === false && !orderData) ? (
+        ) : (loading === false && orderData?.length < 1) ? (
           <div className='flex flex-col items-center gap-[20px] mt-[50px]'>
             <p className="text-lg font-poppins">No order to show</p>
             <Link href="/" className="bg-yellow-400 px-[15px] py-[7px] font-bold text-lg">
