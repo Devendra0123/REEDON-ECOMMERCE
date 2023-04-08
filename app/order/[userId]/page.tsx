@@ -47,8 +47,13 @@ const Orders = ({ params: { userId } }: Props) => {
   }
 
   useEffect(() => {
+    if(userId === 'user'){
+    setOrderData(null)
+      setLoading(false)
+    }else{
     fetchOrderDetails()
-  }, [])
+    }
+  }, [userId])
 
   return (
     <div>
