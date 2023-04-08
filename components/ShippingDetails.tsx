@@ -233,8 +233,8 @@ const ShippingDetails = () => {
                                         w a i t . . .
                                     </button>
                                 ) : (
-                                    <div onClick={handleShipping} className='cursor-pointer'>
-                                        <button>C o n t i n u e</button>
+                                    <div className='cursor-pointer'>
+                                        <button onClick={()=> handleShipping}>C o n t i n u e</button>
                                     </div>
                                 )
                             }
@@ -381,8 +381,8 @@ const ShippingDetails = () => {
                                         w a i t . . .
                                     </button>
                                 ) : (
-                                    <div onClick={handleShipping} className='cursor-pointer'>
-                                        <button>C o n t i n u e</button>
+                                    <div className='cursor-pointer'>
+                                        <button onClick={()=> handleShipping}>C o n t i n u e</button>
                                     </div>
                                 )
                             }
