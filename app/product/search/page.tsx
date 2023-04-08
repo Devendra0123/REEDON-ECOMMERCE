@@ -16,11 +16,14 @@ interface Props {
 const SearchProduct = () => {
 
   const searchParams = useSearchParams();
-  const search_query = searchParams.get('search_query');
   
   const [loading, setLoading] = useState<boolean>(true)
-
-  const query = `*[_type == "product" && (name match "${search_query}**" || productDescription match "${search_query}**" || categories[]->categoryName match "${search_query}**")]{
+  const [products, setProducts] = useState<any>()
+  const [searchQuery, setSearchQuery] = useState<any>()
+  
+  const fetchProducts = async () => {
+    setLoading(true)
+      const query = `*[_type == "product" && (name match "${searchQuery}**" || productDescription match "${searchQuery}**" || categories[]->categoryName match "${searchQuery}**")]{
     _id,
     name,
     image,
@@ -30,16 +33,13 @@ const SearchProduct = () => {
     slug,
     customerReview
 }`
-
-  const fetchProducts = async () => {
-    setLoading(true)
-    const info = await client.fetch(query)
+  await client.fetch(query).then((res)=> setProducts(res))
     setLoading(false)
-    setProducts(info)
   }
-  const [products, setProducts] = useState<any>()
 
   useEffect(() => {
+     const search_query = searchParams.get('search_query');
+    setSearchQuery(search_query)
     fetchProducts()
   }, [search_query])
 
@@ -54,10 +54,7 @@ const SearchProduct = () => {
             <div className='mt-[30px] h-[20rem] flex items-center justify-center'>
               <Loader />
             </div>
-          ) : (
-            <div>
-              {
-                products?.length > 0 ? (
+          ) :(loading === false && products) ? (
                   <div className='lg:w-4/5 lg:relative lg:left-[250px] lg:top-[20px] flex flex-col lg:flex-row items-center lg:items-start lg:flex-wrap gap-[25px] mt-[10px] p-[10px]'>
                     {
                       products.map((item: any, index: number) => (
@@ -70,16 +67,12 @@ const SearchProduct = () => {
                     <p className='text-center pt-[30px] font-bold'>
                       No Products found
                     </p>
-                    <button className='bg-yellow-400 px-[20px] py-[8px] font-medium font-pacifico'>
+                    <Link href='/' className='bg-yellow-400 px-[20px] py-[8px] font-medium font-pacifico'>
                       Shop now
-                    </button>
+                    </Link>
                   </div>
                 )
-              }
-            </div>
-          )
         }
-
       </div>
 
       <Footer />
