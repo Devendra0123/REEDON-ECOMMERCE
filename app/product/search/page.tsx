@@ -16,12 +16,11 @@ const SearchProduct = () => {
   
   const [loading, setLoading] = useState<boolean>(true)
   const [products, setProducts] = useState<any>()
-  const [searchQuery, setSearchQuery] = useState<any>()
   
   const fetchProducts = async () => {
-    if(searchQuery){
+    if(search_query){
         setLoading(true)
-      const query = `*[_type == "product" && (name match "${searchQuery}**" || productDescription match "${searchQuery}**" || categories[]->categoryName match "${searchQuery}**")]{
+      const query = `*[_type == "product" && (name match "${search_query}**" || productDescription match "${search_query}**" || categories[]->categoryName match "${search_query}**")]{
     _id,
     name,
     image,
@@ -31,15 +30,15 @@ const SearchProduct = () => {
     slug,
     customerReview
 }`
-  await client.fetch(query).then(res=> setProducts(res))
+ await client.fetch(query, { cache: 'no-store' }).then((res)=> {
+    setProducts(res)
     setLoading(false)
-  }else{
-    console.log('Type the name of the products')
+  }
+   )
   }
   }
 
   useEffect(() => {
-    setSearchQuery(search_query)
     fetchProducts()
   }, [search_query])
 
