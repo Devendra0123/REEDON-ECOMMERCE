@@ -18,9 +18,10 @@ const SearchProduct = () => {
   const [products, setProducts] = useState<any>()
   
   const fetchProducts = async () => {
+ 
     if(search_query){
         setLoading(true)
-      const query = `*[_type == "product" && (name match "${search_query}**" || productDescription match "${search_query}**" || categories[]->categoryName match "${search_query}**")]{
+      const query = `*[_type == "product" && name match '${search_query.toLowerCase()}*' || productDescription match '${search_query.toLowerCase()}*' || categories[]->categoryName match '${search_query.toLowerCase()}*']{
     _id,
     name,
     image,
@@ -53,13 +54,13 @@ const SearchProduct = () => {
             <div className='mt-[30px] h-[20rem] flex items-center justify-center'>
               <Loader />
             </div>
-          ) :(loading === false && products) ? (
+          ) :(loading === false && products?.length > 0) ? (
                   <div className='lg:w-4/5 lg:relative lg:left-[250px] lg:top-[20px] flex flex-col lg:flex-row items-center lg:items-start lg:flex-wrap gap-[25px] mt-[10px] p-[10px]'>
                     {
                       products.map((item: any, index: number) => (
                         <ProductCard key={index} product={item} />
                       ))
-                    }
+                       }
                   </div>
                 ) : (
                   <div className='flex flex-col items-center gap-[20px]'>
