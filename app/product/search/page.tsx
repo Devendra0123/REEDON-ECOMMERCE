@@ -30,9 +30,11 @@ const SearchProduct = () => {
     slug,
     customerReview
 }`
-  await client.fetch(query).then((res=> setProducts(res))
+  await client.fetch(query).then(res=> setProducts(res))
     setLoading(false)
-    }
+  }else{
+    console.log('Type the name of the products')
+  }
   }
 
   useEffect(() => {
