@@ -312,7 +312,7 @@ const ShippingDetails = () => {
                     }
                 </div>
 
-                <form className='w-full flex flex-col'>
+                <div className='w-full flex flex-col'>
                     <div className='flex items-center gap-[10px] py-[15px]'>
                         <p className='w-full font-poppins font-bold text-center px-[10px] underline underline-offset-4 decoration-violet-800'>
                             Provide shipping details to place your order
@@ -388,7 +388,7 @@ const ShippingDetails = () => {
                             }
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     )
