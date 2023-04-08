@@ -12,6 +12,7 @@ import Link from 'next/link';
 const SearchProduct = () => {
 
   const searchParams = useSearchParams();
+  const search_query = searchParams.get('search_query');
   
   const [loading, setLoading] = useState<boolean>(true)
   const [products, setProducts] = useState<any>()
@@ -38,7 +39,6 @@ const SearchProduct = () => {
   }
 
   useEffect(() => {
-     const search_query = searchParams.get('search_query');
     setSearchQuery(search_query)
     fetchProducts()
   }, [search_query])
