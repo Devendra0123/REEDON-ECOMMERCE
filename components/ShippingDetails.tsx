@@ -172,7 +172,7 @@ const ShippingDetails = () => {
                         </p>
                     </div>
 
-                    <div className='w-[95%] flex items-center justify-between p-[10px] shadow-lg mb-[10px]'>
+                    <div className='w-full flex items-center justify-between p-[10px] shadow-lg mb-[10px]'>
                         <label className='whitespace-nowrap flex items-center gap-[5px] font-bold'>
                             Name :
                             <input className='grow outline-none bg-transparent font-medium font-poppins'
@@ -182,7 +182,7 @@ const ShippingDetails = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" fill="orange" width="24" height="24" viewBox="0 0 24 24"><path d="M19 7.001c0 3.865-3.134 7-7 7s-7-3.135-7-7c0-3.867 3.134-7.001 7-7.001s7 3.134 7 7.001zm-1.598 7.18c-1.506 1.137-3.374 1.82-5.402 1.82-2.03 0-3.899-.685-5.407-1.822-4.072 1.793-6.593 7.376-6.593 9.821h24c0-2.423-2.6-8.006-6.598-9.819z" /></svg>
                     </div>
 
-                    <div className='w-[95%] flex items-center justify-between p-[10px] shadow-lg mb-[10px]'>
+                    <div className='w-full flex items-center justify-between p-[10px] shadow-lg mb-[10px]'>
                         <label className='whitespace-nowrap flex items-center gap-[5px] font-bold'>
                             Email :
                             <input className='grow outline-none bg-transparent font-medium font-poppins'
@@ -192,7 +192,7 @@ const ShippingDetails = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" fill='orange' width="24" height="24" viewBox="0 0 24 24"><path d="M22 5v14h-20v-14h20zm2-2h-24v18h24v-18zm-2 16l-6.526-6.618-3.445 3.483-3.418-3.525-6.611 6.66 5.051-8-5.051-6 10.029 7.446 9.971-7.446-4.998 6.01 4.998 7.99z" /></svg>
                     </div>
 
-                    <div className='w-[95%] flex items-center justify-between p-[10px] shadow-lg mb-[10px]'>
+                    <div className='w-full flex items-center justify-between p-[10px] shadow-lg mb-[10px]'>
                         <label className='whitespace-nowrap flex items-center gap-[5px] font-bold'>
                             Location :
                             <input className='grow outline-none bg-transparent font-medium font-poppins'
@@ -202,7 +202,7 @@ const ShippingDetails = () => {
                         <svg width="24" height="24" fill='orange' xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M12 10c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2m0-5c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3m-7 2.602c0-3.517 3.271-6.602 7-6.602s7 3.085 7 6.602c0 3.455-2.563 7.543-7 14.527-4.489-7.073-7-11.072-7-14.527m7-7.602c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602" /></svg>
                     </div>
 
-                    <div className='w-[95%] flex items-center justify-between p-[10px] shadow-lg mb-[10px]'>
+                    <div className='w-full flex items-center justify-between p-[10px] shadow-lg mb-[10px]'>
                         <label className='whitespace-nowrap flex items-center gap-[5px] font-bold'>
                             Contact Number :
                             <input className='grow outline-none bg-transparent font-medium font-poppins'
@@ -230,12 +230,12 @@ const ShippingDetails = () => {
                         <div className='font-poppins text-lg font-bold flex justify-center items-center bg-violet-800 text-white text-center w-full py-[8px]'>
                             {
                                 loading ? (
-                                    <p>
+                                    <button>
                                         w a i t . . .
-                                    </p>
+                                    </button>
                                 ) : (
                                     <div className='cursor-pointer'>
-                                        <p onClick={handleShipping}>C o n t i n u e</p>
+                                        <button onClick={handleShipping}>C o n t i n u e</button>
                                     </div>
                                 )
                             }
