@@ -5,6 +5,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import Rating from './Rating'
 import { urlFor } from '@/utils/sanityClient'
+import { useRouter } from 'next/navigation'
 
 interface Props {
     product: {
@@ -24,25 +25,25 @@ interface Props {
 }
 
 const ProductCard = ({ product }: Props) => {
-
+    const router = useRouter()
     const [rating, setRating] = useState<number>(0)
     const discountPercent = (product.oldPrice - product.currentPrice) / product.oldPrice * 100
 
     /*...Rating....*/
     useEffect(() => {
         if (product.customerReview?.length > 0) {
-          const customerRating = product.customerReview.reduce(
-            (total: number, item: any) => total + item.rating,
-            0
-          );
-     
-          const rate = Math.floor(customerRating/product.customerReview.length)
-          setRating(rate);
+            const customerRating = product.customerReview.reduce(
+                (total: number, item: any) => total + item.rating,
+                0
+            );
+
+            const rate = Math.floor(customerRating / product.customerReview.length)
+            setRating(rate);
         }
-      }, [product.customerReview]);
+    }, [product.customerReview]);
 
     return (
-        <Link href={`/product/${product.slug.current}`} className='max-w-full md:w-[32rem] relative flex gap-[10px] bg-white rounded-lg p-[10px] shadow-xl'>
+        <div onClick={() => router.push(`/product/${product.slug.current}`)} className='max-w-full md:w-[32rem] relative flex gap-[10px] bg-white rounded-lg p-[10px] shadow-xl cursor-pointer'>
             <div className='w-[12rem] h-[9rem] relative'>
                 <Image src={urlFor(product.image[0]).url()} fill className='object-contain' alt='productImage' />
             </div>
@@ -80,7 +81,7 @@ const ProductCard = ({ product }: Props) => {
                 }
 
             </div>
-        </Link>
+        </div>
     )
 }
 
