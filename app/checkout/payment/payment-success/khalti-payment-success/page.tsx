@@ -33,6 +33,7 @@ const KhaltiPaymentSuccess = ({ searchParams: { message, purchase_order_id, amou
     const [user, setUser] = useState<any>()
 
     useEffect(() => {
+        console.log(purchase_order_id)
         setCartProducts(cartItems);
         setTotalProducts(totalQuantities)
         setShippingInfo(shippingDetails);
@@ -42,7 +43,8 @@ const KhaltiPaymentSuccess = ({ searchParams: { message, purchase_order_id, amou
             setProcessing(false);
             setOrderPlaced(false)
         }
-        if (purchase_order_id && cartProducts && totalProducts && shippingInfo && deliveryCharge && user) {
+        if (purchase_order_id && cartItems && totalQuantities && shippingDetails && deliveryCharge && user) {
+            console.log('Hi')
             try {
                 setProcessing(true);
                 setOrderPlaced(false)
@@ -54,7 +56,7 @@ const KhaltiPaymentSuccess = ({ searchParams: { message, purchase_order_id, amou
                 setProcessing(false)
             }
         }
-    }, [purchase_order_id,cartItems, shippingDetails, userProfile, totalQuantities])
+    }, [purchase_order_id,cartItems, shippingDetails, userProfile, totalQuantities, user])
 
     return (
         <div>
