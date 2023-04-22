@@ -70,8 +70,8 @@ const PaymentSection = () => {
         const orderId = generateOrderId();
 
         const requestBody = {
-            "return_url": 'https://reedon-shop.vercel.app/checkout/payment/payment-success/khalti-payment-success',
-            "website_url": 'https://reedon-shop.vercel.app',
+            "return_url": 'https://reedon.shop/checkout/payment/payment-success/khalti-payment-success',
+            "website_url": 'https://reedon.shop',
             "amount": 1300,
             "purchase_order_id": "test12",
             "purchase_order_name": "test",

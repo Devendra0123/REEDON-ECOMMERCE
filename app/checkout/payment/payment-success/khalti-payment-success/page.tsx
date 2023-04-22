@@ -54,7 +54,7 @@ const KhaltiPaymentSuccess = ({ searchParams: { message, purchase_order_id, amou
                 setProcessing(false)
             }
         }
-    }, [cartItems, shippingDetails, userProfile, totalQuantities])
+    }, [purchase_order_id,cartItems, shippingDetails, userProfile, totalQuantities])
 
     return (
         <div>
