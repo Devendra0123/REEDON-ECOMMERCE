@@ -65,7 +65,7 @@ const PaymentSection = () => {
         setShippingInfo(shippingDetails)
     }, [shippingDetails])
     /*.......Handle KHALTI PAYMENT.....*/
-    const handleKhaltiPayment = () => {
+    const handleKhaltiPayment = async () => {
         const amountPaisa = (totalPrice * 100) + (deliveryCharge * 100);
         const orderId = generateOrderId();
 
@@ -77,14 +77,10 @@ const PaymentSection = () => {
             "purchase_order_name": "test",
         };
 
-        axios
-            .post("https://a.khalti.com/api/v2/epayment/initiate/", requestBody, {
-                headers: {
-                    "Authorization": 'Key 1a2949d0117c49d8ba404af722f07bdd'
-                }
-            })
-            .then(response => {
-                window.location.href = response.data.payment_url;
+        await axios.post('/api/khalti-payment', requestBody)
+            .then((response: any) => {
+                console.log(response.data.data.payment_url)
+                window.location.href = response.data.data.payment_url;
             })
             .catch(error => {
                 toast.error(error.message)

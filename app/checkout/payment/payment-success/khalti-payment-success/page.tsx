@@ -62,7 +62,7 @@ const KhaltiPaymentSuccess = ({ searchParams: { message, purchase_order_id, amou
 
             {
                 (orderPlaced && processing === false) ? (
-                    <div className='flex flex-col items-center mt-[50px]'>
+                    <div className='p-[20px] flex flex-col items-center mt-[50px]'>
                         <div className='flex items-center gap-[10px]'>
                             <div className='bg-slate-300 w-[3rem] h-[3rem] flex items-center justify-center rounded-full shadow-xl'>
                                 <GiCheckMark className='text-green-500 text-2xl' />
