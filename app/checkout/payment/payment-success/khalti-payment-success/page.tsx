@@ -12,6 +12,7 @@ import useShippingStore from '@/context/shippingContext';
 import useAuthStore from '@/context/authStore'
 import { deliveryCharge } from '@/utils/data'
 import Loader from '@/components/Loader'
+import { useSearchParams } from 'next/navigation';
 
 interface Props {
     searchParams: {
@@ -21,7 +22,14 @@ interface Props {
         transaction_id: any
     }
 }
-const KhaltiPaymentSuccess = ({ searchParams: { message, purchase_order_id, amount, transaction_id } }: Props) => {
+const KhaltiPaymentSuccess = () => {
+
+    const searchParams = useSearchParams();
+
+    const purchase_order_id = searchParams.get('purchase_order_id');
+    const message = searchParams.get('message');
+    const transaction_id = searchParams.get('transaction_id');
+    const amount = searchParams.get('amount')
     const { cartItems, totalQuantities }: any = useStateContext();
     const { shippingDetails } = useShippingStore();
     const { userProfile }: any = useAuthStore()
