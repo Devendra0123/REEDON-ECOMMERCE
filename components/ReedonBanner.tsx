@@ -21,12 +21,9 @@ const ReedonBanner = () => {
     }} className={color}>
       <div className='p-[10px] flex items-center justify-center gap-[20px]'>
         <p className='font-poppins text-sm mdtext-lg font-bold'>
-          Buy this website
+          Made by Devendra Chy.
         </p>
         <div className='flex items-center gap-[5px] text-sm md:text-lg font-pacifico'>
-          <p className='font-pacifico text-sm md:text-lg font-bold tracking-wider text-center'>
-            Reedon Web
-          </p>
           <p>
             9807717694
           </p>
