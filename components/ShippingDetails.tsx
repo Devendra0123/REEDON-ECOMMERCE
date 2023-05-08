@@ -172,7 +172,7 @@ const ShippingDetails = () => {
                     </div>
 
                     <div className='w-full flex items-center justify-between p-[10px] shadow-lg mb-[10px]'>
-                        <label className='flex items-center gap-[5px] font-bold'>
+                        <label className='flex flex-col md:flex-row md:items-center gap-[5px] font-bold'>
                             Name :
                             <input className='grow outline-none bg-transparent font-medium font-poppins'
                                 onChange={(e) => setCustomerName(e.target.value)}
@@ -182,7 +182,7 @@ const ShippingDetails = () => {
                     </div>
 
                     <div className='w-full flex items-center justify-between p-[10px] shadow-lg mb-[10px]'>
-                        <label className='flex items-center gap-[5px] font-bold'>
+                        <label className='flex flex-col md:flex-row md:items-center gap-[5px] font-bold'>
                             Email :
                             <input className='grow outline-none bg-transparent font-medium font-poppins'
                                 onChange={(e) => setEmail(e.target.value)}
@@ -192,7 +192,7 @@ const ShippingDetails = () => {
                     </div>
 
                     <div className='w-full flex items-center justify-between p-[10px] shadow-lg mb-[10px]'>
-                        <label className='flex items-center gap-[5px] font-bold'>
+                        <label className='flex flex-col md:flex-row md:items-center gap-[5px] font-bold'>
                             Location :
                             <input className='grow outline-none bg-transparent font-medium font-poppins'
                                 onChange={(e) => setLocation(e.target.value)}
@@ -202,7 +202,7 @@ const ShippingDetails = () => {
                     </div>
 
                     <div className='w-full flex items-center justify-between p-[10px] shadow-lg mb-[10px]'>
-                        <label className='whitespace-nowrap flex items-center gap-[5px] font-bold'>
+                        <label className='whitespace-nowrap flex flex-col md:flex-row md:items-center gap-[5px] font-bold'>
                             Contact Number :
                             <input className='grow outline-none bg-transparent font-medium font-poppins'
                                 type='number' value={contactNumber ? contactNumber : ''}
